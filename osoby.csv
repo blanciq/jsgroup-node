@@ -1,4 +1,4 @@
-index_1,index_2,index_3,index_4,index_5
+name,surname,mail,currency,datetime
 Jan,Kowalski,jan.kowalski@gmail.com,10€,2013-09-18 10:00
 Marian,Nowak,marian.nowak@yahoo.com,20€,2013-09-16 10:00
 Kasia,Kowalska,kasia_kowalska@poczta.pl,10€,2013-09-20 10:00
