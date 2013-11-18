@@ -3,9 +3,10 @@ module.exports = function(data, callback) {
     var headers = [];
     var lines = [];
     var result = [];
+    var lineBreaker = '\n';
 
     var parseFile = function (file) {
-        return file.toString().split('\r\n');
+        return file.toString().split(lineBreaker);
     }
 
     var getHeaders = function() {
