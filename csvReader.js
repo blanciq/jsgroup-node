@@ -7,6 +7,9 @@ var PersonModel = require('./PersonModel');
 module.exports = function (request, response) {
 
     function returnResponse(data) {
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+		response.setHeader("Access-Control-Allow-Headers", "Content-Type");
         responseHandler(response, request, data);
     };
 
@@ -32,7 +35,7 @@ module.exports = function (request, response) {
         request.on('end', function () {
             try {
                 var newPerson = PersonModel.build(JSON.parse(postBody));
-                fs.writeFile(fileName, newPerson.toCsvLine(), {flag: 'a'}, function (err) {
+                fs.writeFile(fileName, 'name,surname,mail,currency,datetime\n' + newPerson.toCsvLine(), {flag: 'a'}, function (err) {
                     if (err) {
                         throw err;
                     }

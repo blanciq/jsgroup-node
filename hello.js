@@ -1,4 +1,6 @@
 var http = require('http');
 var reader = require('./csvReader.js');
 
-http.createServer(reader).listen(8888);
+var app = http.createServer(reader);
+
+app.listen(8080);

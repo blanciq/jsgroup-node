@@ -24,6 +24,7 @@ PersonModel.build = function (rawObject) {
         model.surname = rawObject.surname;
         model.mail = rawObject.mail;
         model.currency = rawObject.currency;
+		model.datetime = new Date(rawObject.datetime);
     }
     catch (e) {
         throw 'Error during parsing raw person object';
